@@ -143,7 +143,7 @@ fun layout(){
             }
         }
 
-        Spacer(modifier = Modifier.height(300.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         Button(onClick = {  mContext.startActivity(Intent(mContext,intentactivity::class.java)) },
             shape = RoundedCornerShape(5.dp),

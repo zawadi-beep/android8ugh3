@@ -40,6 +40,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
+import android.provider.Settings
+import androidx.compose.foundation.clickable
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 import com.example.android.ui.theme.AndroidTheme
 
 class intentactivity : ComponentActivity() {
@@ -56,12 +60,14 @@ class intentactivity : ComponentActivity() {
 @Composable
 fun MyIntents(){
     Column(
+
         modifier = Modifier
             .fillMaxSize()
             .paint(
                 painterResource(id = R.drawable.bg),
                 contentScale = ContentScale.FillBounds
             )
+
         ) {
         val mContext = LocalContext.current
         //TopAppBar
@@ -79,17 +85,24 @@ fun MyIntents(){
                 }
             },
             actions = {
-                Icon(
-                    imageVector = Icons.Default.Share,
-                    contentDescription = "Share",
-                    tint = Color.White
-                )
-                Spacer(modifier = Modifier.width(10.dp))
-                Icon(
-                    imageVector = Icons.Default.Settings,
-                    contentDescription = "Settings",
-                    tint = Color.White
-                )
+                IconButton(onClick = {    val shareIntent=Intent(Intent.ACTION_SEND)
+                    shareIntent.type="text/plain"
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, "Check out this is a cool content")
+                    mContext.startActivity(Intent.createChooser(shareIntent, "Share")) }) {
+                    Icon(
+                        imageVector = Icons.Default.Share,
+                        contentDescription = "Share",
+                        tint = Color.White
+                    )
+                }
+                IconButton(onClick = { val settingsIntent=Intent(Settings.ACTION_SETTINGS)
+                    mContext.startActivity(settingsIntent) }) {
+                    Icon(
+                        imageVector = Icons.Default.Settings,
+                        contentDescription = "Settings",
+                        tint = Color.White
+                    )
+                }
 
             }
 
@@ -116,7 +129,7 @@ fun MyIntents(){
                 )
             
         }
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         OutlinedButton(
             onClick = {
@@ -141,13 +154,13 @@ fun MyIntents(){
             )
 
         }
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(10.dp))
         OutlinedButton(
             onClick = {
                 val shareIntent = Intent(Intent.ACTION_SEND)
                 shareIntent.type = "text/plain"
-                shareIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("akinyiglory2@gmail.com"))
-                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "subject")
+                shareIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("zawadigift640@gmail.com"))
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "APPLICATION FOR A JOB")
                 shareIntent.putExtra(Intent.EXTRA_TEXT, "Hello, this is the email body")
                 mContext.startActivity(shareIntent)
             },
@@ -166,7 +179,7 @@ fun MyIntents(){
             )
 
         }
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(10.dp))
         OutlinedButton(
             onClick = {
                 val smsIntent=Intent(Intent.ACTION_SENDTO)
@@ -188,7 +201,7 @@ fun MyIntents(){
             )
 
         }
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(10.dp))
         OutlinedButton(
             onClick = {
                 val callIntent=Intent(Intent.ACTION_DIAL)
@@ -209,7 +222,7 @@ fun MyIntents(){
             )
 
         }
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(10.dp))
         OutlinedButton(
             onClick = {
                 val shareIntent=Intent(Intent.ACTION_SEND)
@@ -231,9 +244,24 @@ fun MyIntents(){
             )
 
         }
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(10.dp))
+        Text(text = "Do you have an account? Register",
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable {
+                    mContext.startActivity(Intent(mContext,formactivity::class.java))
+
+                }
+
+        )
 
     }
+
+
+
+
 
 }
 

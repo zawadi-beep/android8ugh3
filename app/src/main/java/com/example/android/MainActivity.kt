@@ -63,7 +63,7 @@ fun Demo(){
 
           text = "Welcome to Android",
           color = Color.Red,
-          fontSize = 30.sp,
+          fontSize = 20.sp,
           fontStyle = FontStyle.Italic,
           fontWeight = FontWeight.Bold
 
@@ -75,14 +75,14 @@ fun Demo(){
 
       ) {
           Button(onClick = {})
-          { Text("BUTTON") }
+          { Text("Next") }
       }
 
 
 
 
 
-      Spacer(modifier = Modifier.height(20.dp))
+      Spacer(modifier = Modifier.height(10.dp))
       Text(
           text = "Types of cars",
           fontSize = 20.sp,
@@ -105,21 +105,21 @@ fun Demo(){
 
       Box(modifier = Modifier.fillMaxWidth(),
           contentAlignment = Alignment.Center) {
-          Button(onClick = { /*TODO*/ }) {
+          Button(onClick = { mContext.startActivity(Intent(mContext,Layoutactivity::class.java) )}) {
               Text(text = "See more")
           }
       }
 
 
 
-      Spacer(modifier = Modifier.height(20.dp))
+      Spacer(modifier = Modifier.height(10.dp))
       Text(
           text = "Types of Fruits",
-          fontSize = 30.sp,
+          fontSize = 20.sp,
           modifier = Modifier
               .fillMaxWidth()
               .background(Color.Black)
-              .height(40.dp)
+              .height(30.dp)
           ,
           textAlign = TextAlign.Center,
           color = Color.White,
@@ -134,13 +134,9 @@ fun Demo(){
       Text(text = "5. Banana" )
       Spacer(modifier = Modifier.height(5.dp))
       Divider()
-      Text(
-          text = "Fruits are an excellent source of essential vitamins and minerals, and they are high in fiber. Fruits also provide a wide range of health-boosting antioxidants, including flavonoids. Eating a diet high in fruits and vegetables can reduce a person's risk of developing heart disease, cancer, inflammation, and diabetes.",
-          color = Color.Magenta,
-          fontFamily = FontFamily.Cursive
-      )
 
-      Spacer(modifier = Modifier.height(10.dp))
+
+      Spacer(modifier = Modifier.height(5.dp))
       Divider()
 
       Box (
