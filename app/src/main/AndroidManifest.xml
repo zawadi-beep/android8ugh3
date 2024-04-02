@@ -13,6 +13,31 @@
         android:theme="@style/Theme.Android"
         tools:targetApi="31">
         <activity
+            android:name=".Lottiactivity"
+            android:exported="false"
+            android:label="@string/title_activity_lottiactivity"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".woofactivity"
+            android:exported="false"
+            android:label="@string/title_activity_woofactivity"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".Exploreactivity"
+            android:exported="false"
+            android:label="@string/title_activity_exploreactivity"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".Destinationactivity"
+            android:exported="false"
+            android:label="@string/title_activity_destinationactivity"
+            android:theme="@style/Theme.Android" />
+        <activity
             android:name=".formactivity"
             android:exported="false"
             android:label="@string/title_activity_formactivity"

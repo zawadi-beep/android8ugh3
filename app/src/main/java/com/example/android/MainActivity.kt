@@ -74,9 +74,25 @@ fun Demo(){
           modifier = Modifier.align(Alignment.CenterHorizontally),
 
       ) {
-          Button(onClick = {})
+          Button(onClick = {mContext.startActivity(Intent(mContext,Layoutactivity::class.java) )})
           { Text("Next") }
       }
+      Box(
+          modifier = Modifier.align(Alignment.CenterHorizontally),
+
+          ) {
+          Button(onClick = {mContext.startActivity(Intent(mContext,Exploreactivity::class.java) )})
+          { Text("explore") }
+      }
+
+      Box(
+          modifier = Modifier.align(Alignment.CenterHorizontally),
+
+          ) {
+          Button(onClick = {mContext.startActivity(Intent(mContext,woofactivity::class.java) )})
+          { Text("woof") }
+      }
+
 
 
 
@@ -105,7 +121,7 @@ fun Demo(){
 
       Box(modifier = Modifier.fillMaxWidth(),
           contentAlignment = Alignment.Center) {
-          Button(onClick = { mContext.startActivity(Intent(mContext,Layoutactivity::class.java) )}) {
+          Button(onClick = { mContext.startActivity(Intent(mContext,Destinationactivity::class.java) )}) {
               Text(text = "See more")
           }
       }

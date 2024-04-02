@@ -99,7 +99,8 @@ fun Myform(){
             leadingIcon = { Icon(imageVector = Icons.Default.Person, contentDescription = "Person icon")},
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 10.dp, end = 10.dp)
+                .padding(start = 10.dp, end = 10.dp),
+            keyboardOptions = KeyboardOptions( keyboardType= KeyboardType.Text)
         )
         Spacer(modifier = Modifier.height(10.dp))
         TextField(value = lastname,
@@ -108,7 +109,8 @@ fun Myform(){
             leadingIcon = { Icon(imageVector = Icons.Default.Person, contentDescription = "Person icon")},
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 10.dp, end = 10.dp)
+                .padding(start = 10.dp, end = 10.dp),
+            keyboardOptions = KeyboardOptions( keyboardType= KeyboardType.Text)
         )
         Spacer(modifier = Modifier.height(10.dp))
         TextField(value = email,
@@ -117,7 +119,8 @@ fun Myform(){
             leadingIcon = { Icon(imageVector = Icons.Default.Email, contentDescription = "Person icon")},
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 10.dp, end = 10.dp)
+                .padding(start = 10.dp, end = 10.dp),
+            keyboardOptions = KeyboardOptions( keyboardType= KeyboardType.Email)
         )
         Spacer(modifier = Modifier.height(10.dp))
         TextField(value = password,
@@ -126,7 +129,9 @@ fun Myform(){
             leadingIcon = { Icon(imageVector = Icons.Default.Lock, contentDescription = "Person icon")},
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 10.dp, end = 10.dp)
+                .padding(start = 10.dp, end = 10.dp),
+            keyboardOptions = KeyboardOptions( keyboardType= KeyboardType.Password),
+
         )
         Spacer(modifier = Modifier.height(10.dp))
         TextField(value = contact,
@@ -135,7 +140,8 @@ fun Myform(){
             leadingIcon = { Icon(imageVector = Icons.Default.Call, contentDescription = "Person icon")},
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 10.dp, end = 10.dp)
+                .padding(start = 10.dp, end = 10.dp),
+            keyboardOptions = KeyboardOptions( keyboardType= KeyboardType.Phone)
         )
         Spacer(modifier = Modifier.height(20.dp))
 

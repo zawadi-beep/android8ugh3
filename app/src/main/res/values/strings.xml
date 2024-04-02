@@ -3,4 +3,9 @@
     <string name="title_activity_layoutactivity">Layoutactivity</string>
     <string name="title_activity_intentactivity">intentactivity</string>
     <string name="title_activity_formactivity">formactivity</string>
+    <string name="title_activity_destinationactivity">Destinationactivity</string>
+    <string name="title_activity_exploreactivity">Exploreactivity</string>
+    <string name="title_activity_woofactivity">woofactivity</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_activity_lottiactivity">Lottiactivity</string>
 </resources>
