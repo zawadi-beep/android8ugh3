@@ -21,6 +21,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Share
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -443,6 +444,13 @@ fun woof(){
 
             }
             //end of card
+
+            Box(modifier = Modifier.fillMaxWidth(),
+                contentAlignment = Alignment.Center) {
+                Button(onClick = { mContext.startActivity(Intent(mContext,Lottiactivity::class.java) )}) {
+                    Text(text = "Lottie")
+                }
+            }
 
         }
 
