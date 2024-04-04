@@ -13,15 +13,16 @@
         android:theme="@style/Theme.Android"
         tools:targetApi="31">
         <activity
+            android:name=".splashactivity"
+            android:exported="false"
+            android:label="@string/title_activity_splashactivity"
+            android:theme="@style/Theme.Android" />
+        <activity
             android:name=".Lottiactivity"
             android:exported="false"
             android:label="@string/title_activity_lottiactivity"
             android:theme="@style/Theme.Android" />
-        <activity
-            android:name=".MainActivity2"
-            android:exported="false"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.Android" />
+
         <activity
             android:name=".woofactivity"
             android:exported="false"
