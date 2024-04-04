@@ -58,15 +58,10 @@
             android:theme="@style/Theme.Android" />
         <activity
             android:name=".Layoutactivity"
-            android:exported="true"
+            android:exported="false"
             android:label="@string/title_activity_layoutactivity"
-            android:theme="@style/Theme.Android">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/Theme.Android"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="false"
