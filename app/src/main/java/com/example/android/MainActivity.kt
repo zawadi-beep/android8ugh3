@@ -26,6 +26,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -41,6 +42,10 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.airbnb.lottie.compose.LottieAnimation
+import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.animateLottieCompositionAsState
+import com.airbnb.lottie.compose.rememberLottieComposition
 import com.example.android.ui.theme.AndroidTheme
 
 class MainActivity : ComponentActivity() {
@@ -129,31 +134,6 @@ fun Demo(){
 
 
       Spacer(modifier = Modifier.height(10.dp))
-      Text(
-          text = "Types of Fruits",
-          fontSize = 20.sp,
-          modifier = Modifier
-              .fillMaxWidth()
-              .background(Color.Black)
-              .height(30.dp)
-          ,
-          textAlign = TextAlign.Center,
-          color = Color.White,
-          fontWeight = FontWeight.Bold
-
-      )
-
-      Text(text = "1. Watermelon" )
-      Text(text = "2. Mango" )
-      Text(text = "3. Apple" )
-      Text(text = "4. Blackberry" )
-      Text(text = "5. Banana" )
-      Spacer(modifier = Modifier.height(5.dp))
-      Divider()
-
-
-      Spacer(modifier = Modifier.height(5.dp))
-      Divider()
 
       Box (
           modifier = Modifier.fillMaxWidth(),
@@ -163,7 +143,7 @@ fun Demo(){
           Image(painter = painterResource(id = R.drawable.wallpapers),
                 contentDescription ="stones",
                 modifier = Modifier
-                    .size(200.dp)
+                    .size(20.dp)
                     .clip(shape = CircleShape),
                 contentScale = ContentScale.Crop
 
@@ -186,6 +166,13 @@ fun Demo(){
       ) {
           Text(text = "Continue")
       }
+
+      //Lottie Animation
+      val composition by rememberLottieComposition(spec = LottieCompositionSpec.RawRes(R.raw.hamster))
+      val progress by animateLottieCompositionAsState(composition)
+      LottieAnimation(composition, progress,
+          modifier = Modifier.size(300.dp)
+      )
 
 
 
