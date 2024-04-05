@@ -1,0 +1,88 @@
+package com.example.android
+
+import android.content.Intent
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.android.ui.theme.Purple80
+import com.example.android.ui.theme.pink2
+
+class Present : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            Great()
+
+        }
+    }
+}
+
+@Composable
+fun Great(){
+
+    Column(modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center) {
+
+        val mContext = LocalContext.current
+
+        Image(painter = painterResource(id = R.drawable.shopping),
+            contentDescription ="stones",
+            modifier = Modifier
+                .size(300.dp)
+                .clip(shape = CircleShape),
+            contentScale = ContentScale.Crop
+
+        )
+
+        Text(text = "Choose Your Product", fontWeight = FontWeight.ExtraBold, fontSize = 40.sp, fontFamily = FontFamily.Cursive)
+
+        Text(text ="When we want to buy something, we go to a shop. There are many kinds of shops in every town or city, but most of them have a food supermarket, a department store.", fontSize = 20.sp)
+
+        Button(onClick = {
+            mContext.startActivity(Intent(mContext,Lottiactivity::class.java))
+        },
+            shape = RoundedCornerShape(5.dp),
+            colors = ButtonDefaults.buttonColors(pink2),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 30.dp, end = 30.dp)
+        ) {
+            Text(text = "Next")
+        }
+
+    }
+    
+}
+
+@Preview(showBackground = true)
+@Composable
+fun GreatPreview() {
+    Great()
+}

@@ -9,4 +9,10 @@
     <string name="title_activity_main2">MainActivity2</string>
     <string name="title_activity_lottiactivity">Lottiactivity</string>
     <string name="title_activity_splashactivity">splashactivity</string>
+    <string name="title_activity_">Activity</string>
+    <string name="title_activity_present">Present</string>
+    <string name="title_activity_second_preview">SecondPreview</string>
+    <string name="title_activity_third_preview">ThirdPreview</string>
+    <string name="title_activity_featuredactivity">Featuredactivity</string>
+    <string name="title_activity_chairactivity">chairactivity</string>
 </resources>

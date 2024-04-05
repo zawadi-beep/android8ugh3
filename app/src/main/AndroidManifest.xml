@@ -13,24 +13,36 @@
         android:theme="@style/Theme.Android"
         tools:targetApi="31">
         <activity
+            android:name=".chairactivity"
+            android:exported="false"
+            android:label="@string/title_activity_chairactivity"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".Featuredactivity"
+            android:exported="false"
+            android:label="@string/title_activity_featuredactivity"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".ThirdPreview"
+            android:exported="false"
+            android:label="@string/title_activity_third_preview"
+            android:theme="@style/Theme.Android" />
+        <activity
             android:name=".splashactivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Android" >
-
+            android:theme="@style/Theme.Android">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Lottiactivity"
             android:exported="false"
             android:label="@string/title_activity_lottiactivity"
             android:theme="@style/Theme.Android" />
-
         <activity
             android:name=".woofactivity"
             android:exported="false"
@@ -60,14 +72,12 @@
             android:name=".Layoutactivity"
             android:exported="false"
             android:label="@string/title_activity_layoutactivity"
-            android:theme="@style/Theme.Android"/>
-
+            android:theme="@style/Theme.Android" />
         <activity
             android:name=".MainActivity"
             android:exported="false"
             android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.Android"/>
-
+            android:theme="@style/Theme.Android" />
     </application>
 
 </manifest>

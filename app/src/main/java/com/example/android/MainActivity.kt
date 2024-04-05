@@ -10,6 +10,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -82,21 +83,23 @@ fun Demo(){
           Button(onClick = {mContext.startActivity(Intent(mContext,Layoutactivity::class.java) )})
           { Text("Next") }
       }
-      Box(
-          modifier = Modifier.align(Alignment.CenterHorizontally),
 
-          ) {
-          Button(onClick = {mContext.startActivity(Intent(mContext,Exploreactivity::class.java) )})
-          { Text("explore") }
+      Row {
+              Button(onClick = {mContext.startActivity(Intent(mContext,Exploreactivity::class.java) )})
+              { Text("explore") }
+
+
+              Button(onClick = {mContext.startActivity(Intent(mContext,woofactivity::class.java) )})
+              { Text("woof") }
+          Button(onClick = {mContext.startActivity(Intent(mContext,Destinationactivity::class.java) )})
+          { Text("Destiny") }
+
+
+
+
+
       }
 
-      Box(
-          modifier = Modifier.align(Alignment.CenterHorizontally),
-
-          ) {
-          Button(onClick = {mContext.startActivity(Intent(mContext,woofactivity::class.java) )})
-          { Text("woof") }
-      }
 
 
 
