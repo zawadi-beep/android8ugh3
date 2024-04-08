@@ -112,34 +112,42 @@ fun featured(){
             Text(text = "Collection", fontWeight = FontWeight.ExtraBold, fontSize = 30.sp, fontFamily = FontFamily.SansSerif)
         }
 
-        Box(modifier = Modifier
-            .fillMaxWidth()
+
+        Card(modifier = Modifier
             .height(200.dp)
-            .padding(start = 40.dp)) {
+            .fillMaxWidth()
+            .padding(start = 20.dp, end = 20.dp)) {
+            Box(modifier = Modifier
+                .fillMaxWidth()
+                .height(200.dp)
+                ) {
 
-            Image(painter = painterResource(id = R.drawable.shopping),
-                contentDescription ="stones",
-                modifier = Modifier
-                    .size(300.dp),
-                contentScale = ContentScale.Crop
-            )
-
-            Column (modifier = Modifier
-                .width(200.dp)
-                .padding(40.dp)) {
-                Text(text = "The Classic", fontWeight = FontWeight.Bold,color = gold)
-                Text(text = "There are also escalators in big stores which.")
-
-                Icon(
-                    imageVector = Icons.Default.ArrowForward,
-                    contentDescription = "arrowback",
-                    tint = Color.Black
+                Image(painter = painterResource(id = R.drawable.shopping),
+                    contentDescription ="stones",
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    contentScale = ContentScale.Crop
                 )
+
+                Column (modifier = Modifier
+                    .width(200.dp)
+                    .padding(40.dp)) {
+                    Text(text = "The Classic", fontWeight = FontWeight.Bold,color = gold)
+                    Text(text = "There are also escalators in big stores which.", fontWeight = FontWeight.Bold,color  = Color.Black)
+
+                    Icon(
+                        imageVector = Icons.Default.ArrowForward,
+                        contentDescription = "arrowback",
+                        tint = Color.Black
+                    )
+
+                }
+
 
             }
 
-
         }
+
 
         Spacer(modifier = Modifier.height(20.dp))
 
@@ -255,7 +263,13 @@ fun featured(){
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Text(text = "Hand-picks", fontSize = 20.sp, fontWeight = FontWeight.ExtraBold,modifier = Modifier.padding(start = 20.dp))
+        Row {
+            Text(text = "Hand-picks", fontSize = 20.sp, fontWeight = FontWeight.ExtraBold,modifier = Modifier.padding(start = 20.dp))
+
+            Spacer(modifier = Modifier.width(180.dp))
+
+            Text(text = "View all", fontSize = 20.sp, fontWeight = FontWeight.ExtraBold, color = gold)
+        }
         Spacer(modifier = Modifier.height(20.dp))
         Row(modifier = Modifier.horizontalScroll(rememberScrollState())) {
             //card 1

@@ -68,7 +68,7 @@ fun Third(){
         Text(text ="When we want to buy something, we go to a shop. There are many kinds of shops in every town or city, but most of them have a food supermarket, a department store.", fontSize = 20.sp)
 
         Button(onClick = {
-            mContext.startActivity(Intent(mContext,Lottiactivity::class.java))
+            mContext.startActivity(Intent(mContext,FirstPreview::class.java))
         },
             shape = RoundedCornerShape(5.dp),
             colors = ButtonDefaults.buttonColors(Color.Magenta),

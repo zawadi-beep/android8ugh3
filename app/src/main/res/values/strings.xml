@@ -15,4 +15,6 @@
     <string name="title_activity_third_preview">ThirdPreview</string>
     <string name="title_activity_featuredactivity">Featuredactivity</string>
     <string name="title_activity_chairactivity">chairactivity</string>
+    <string name="title_activity_first_preview">FirstPreview</string>
+    <string name="title_activity_secondscreen">Secondscreen</string>
 </resources>

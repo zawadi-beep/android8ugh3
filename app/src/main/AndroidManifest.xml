@@ -13,6 +13,16 @@
         android:theme="@style/Theme.Android"
         tools:targetApi="31">
         <activity
+            android:name=".Secondscreen"
+            android:exported="false"
+            android:label="@string/title_activity_secondscreen"
+            android:theme="@style/Theme.Android" />
+        <activity
+            android:name=".FirstPreview"
+            android:exported="false"
+            android:label="@string/title_activity_first_preview"
+            android:theme="@style/Theme.Android" />
+        <activity
             android:name=".chairactivity"
             android:exported="false"
             android:label="@string/title_activity_chairactivity"

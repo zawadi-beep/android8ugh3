@@ -93,12 +93,21 @@ fun Demo(){
               { Text("woof") }
           Button(onClick = {mContext.startActivity(Intent(mContext,Destinationactivity::class.java) )})
           { Text("Destiny") }
+          Button(onClick = {mContext.startActivity(Intent(mContext,Featuredactivity::class.java) )})
+          { Text("Featured") }
+
 
 
 
 
 
       }
+      Button(onClick = {mContext.startActivity(Intent(mContext,FirstPreview::class.java) )})
+      { Text("First") }
+      Button(onClick = {mContext.startActivity(Intent(mContext,Secondscreen::class.java) )})
+      { Text("Second") }
+      Button(onClick = {mContext.startActivity(Intent(mContext,chairactivity::class.java) )})
+      { Text("chair") }
 
 
 

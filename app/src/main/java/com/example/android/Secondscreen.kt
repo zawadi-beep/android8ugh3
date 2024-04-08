@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -33,21 +32,18 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.android.ui.theme.AndroidTheme
-import com.example.android.ui.theme.Purple80
 
-class SecondPreview : ComponentActivity() {
+class Secondscreen : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Second()
-
+           second()
         }
     }
 }
 
 @Composable
-fun Second(){
-
+fun second(){
     Column(modifier = Modifier
         .fillMaxSize()
         ,
@@ -70,7 +66,7 @@ fun Second(){
         Text(text ="When we want to buy something, we go to a shop. There are many kinds of shops in every town or city, but most of them have a food supermarket, a department store.", fontSize = 20.sp)
 
         Button(onClick = {
-            mContext.startActivity(Intent(mContext,Lottiactivity::class.java))
+            mContext.startActivity(Intent(mContext,ThirdPreview::class.java))
         },
             shape = RoundedCornerShape(5.dp),
             colors = ButtonDefaults.buttonColors(Color.Magenta),
@@ -87,6 +83,6 @@ fun Second(){
 
 @Preview(showBackground = true)
 @Composable
-fun SeconddPreview(){
-    Second()
+fun SecondPreview2() {
+    second()
 }

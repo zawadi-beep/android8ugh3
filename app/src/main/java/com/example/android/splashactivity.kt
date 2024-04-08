@@ -59,8 +59,7 @@ class splashactivity : ComponentActivity() {
                  finish()
 
              }
-        }
-    }
+        }}
 }
 
 @Composable
@@ -84,7 +83,7 @@ fun Mysplash(){
 
         Spacer(modifier = Modifier.height(100.dp))
 
-        Text(text = "Sponsored by Google", fontSize = 20.sp)
+                                                111
 
         Image(painter = painterResource(id = R.drawable.google),
             contentDescription ="stones",

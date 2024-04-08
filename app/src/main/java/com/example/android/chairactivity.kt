@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -111,13 +112,17 @@ fun chair(){
         //end of topappbar
         Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
 
-            Row {
+            Row(modifier = Modifier.horizontalScroll(rememberScrollState())) {
                 Text(text = "Chairs", fontWeight = FontWeight.ExtraBold, fontSize =30.sp, fontFamily = FontFamily.SansSerif)
 
                 Spacer(modifier = Modifier.width(20.dp))
                 Text(text = "Tables", fontWeight = FontWeight.ExtraBold, fontSize = 30.sp, fontFamily = FontFamily.SansSerif)
                 Spacer(modifier = Modifier.width(20.dp))
                 Text(text = "Sofa", fontWeight = FontWeight.ExtraBold, fontSize = 30.sp, fontFamily = FontFamily.SansSerif)
+                Spacer(modifier = Modifier.width(20.dp))
+                Text(text = "Bed", fontWeight = FontWeight.ExtraBold, fontSize = 30.sp, fontFamily = FontFamily.SansSerif)
+                Spacer(modifier = Modifier.width(20.dp))
+                Text(text = "Bed", fontWeight = FontWeight.ExtraBold, fontSize = 30.sp, fontFamily = FontFamily.SansSerif)
                 Spacer(modifier = Modifier.width(20.dp))
                 Text(text = "Bed", fontWeight = FontWeight.ExtraBold, fontSize = 30.sp, fontFamily = FontFamily.SansSerif)
             }
@@ -129,7 +134,7 @@ fun chair(){
                     Card(
                         modifier = Modifier
                             .height(200.dp)
-                            .width(150.dp)
+                            .width(180.dp)
                     ) {
                         Box(
                             modifier = Modifier.fillMaxSize(),
@@ -165,10 +170,12 @@ fun chair(){
                        Row {
                            Text(
                                text = "Ksh 1500",
-                               fontSize = 15.sp,
+                               fontSize = 20.sp,
                                fontFamily = FontFamily.Serif,
                                color = Color.Blue
                            )
+
+                           Spacer(modifier = Modifier.width(50.dp))
 
                            Icon(imageVector = Icons.Default.ShoppingCart,
                                contentDescription = "favorite", tint = Color.Black,
@@ -184,116 +191,432 @@ fun chair(){
 
                 //end of column 1
                 Spacer(modifier = Modifier.width(20.dp))
-                //column2
+
                 Column {
                     Card(
                         modifier = Modifier
-                            .height(100.dp)
-                            .width(160.dp)
+                            .height(200.dp)
+                            .width(180.dp)
                     ) {
                         Box(
                             modifier = Modifier.fillMaxSize(),
                             contentAlignment = Alignment.Center
                         ) {
                             Image(
-                                painter = painterResource(id = R.drawable.bg),
+                                painter = painterResource(id = R.drawable.chair),
                                 contentDescription = "New York",
                                 modifier = Modifier.fillMaxSize(),
                                 contentScale = ContentScale.Crop
                             )
-                            Icon(
-                                imageVector = Icons.Default.FavoriteBorder,
-                                contentDescription = "favorite", tint = Color.White,
-                                modifier = Modifier
-                                    .align(Alignment.TopEnd)
-                                    .padding(10.dp)
+
+                        }
+                    }
+                    Spacer(modifier = Modifier.height(5.dp))
+
+                    Column (modifier = Modifier.width(180.dp)){
+                        Text(
+                            text = "Amos Chair",
+                            fontSize = 20.sp,
+                            fontFamily = FontFamily.Serif,
+
                             )
+                        Spacer(modifier = Modifier.height(5.dp))
+
+                        Text(
+                            text = "There are also escalators in .",
+                            fontSize = 15.sp,
+                            fontFamily = FontFamily.Serif,
+                        )
+                        Spacer(modifier = Modifier.height(10.dp))
+
+                        Row {
+                            Text(
+                                text = "Ksh 1500",
+                                fontSize = 15.sp,
+                                fontFamily = FontFamily.Serif,
+                                color = Color.Blue
+                            )
+
+                            Icon(imageVector = Icons.Default.ShoppingCart,
+                                contentDescription = "favorite", tint = Color.Black,
+                                modifier = Modifier
+
+                                    .padding(10.dp))
                         }
+
+
                     }
-                    Spacer(modifier = Modifier.height(5.dp))
-                    Text(
-                        text = "Brazil",
-                        fontSize = 20.sp,
-                        fontFamily = FontFamily.Serif,
 
-                        )
-                    Spacer(modifier = Modifier.height(5.dp))
-                    Row {
-                        Icon(
-                            imageVector = Icons.Default.Star,
-                            contentDescription = "star",
-                            tint = Color.Blue
-                        )
-                        Icon(
-                            imageVector = Icons.Default.Star,
-                            contentDescription = "star",
-                            tint = Color.Blue
-                        )
-                        Icon(
-                            imageVector = Icons.Default.Star,
-                            contentDescription = "star",
-                            tint = Color.Blue
-                        )
-                        Icon(
-                            imageVector = Icons.Default.Star,
-                            contentDescription = "star",
-                            tint = Color.Blue
-                        )
-                        Icon(
-                            imageVector = Icons.Default.Star,
-                            contentDescription = "star",
-                            tint = Color.Blue
-                        )
-                    }
-                    Text(
-                        text = "12000 reviewers",
-                        fontSize = 15.sp,
-                        fontFamily = FontFamily.Serif,
-                    )
-                    Text(
-                        text = "From Ksh 134000",
-                        fontSize = 15.sp,
-                        fontFamily = FontFamily.Serif,
-                        color = Color.Blue
-                    )
-                    Row {
-                        OutlinedButton(
-
-                            onClick = {
-                                val callIntent = Intent(Intent.ACTION_DIAL)
-                                callIntent.data = "tel:072*****37".toUri()
-                                mContext.startActivity(callIntent)
-                            }
-
-                        ) {
-                            Text(text = "Call")
-
-                        }
-                        Spacer(modifier = Modifier.width(5.dp))
-                        OutlinedButton(
-
-                            onClick = {
-                                val shareIntent = Intent(Intent.ACTION_SEND)
-                                shareIntent.type = "text/plain"
-                                shareIntent.putExtra(
-                                    Intent.EXTRA_EMAIL,
-                                    arrayOf("tourguide@gmail.com")
-                                )
-                                shareIntent.putExtra(
-                                    Intent.EXTRA_SUBJECT,
-                                    "Request for a tour visit"
-                                )
-                                shareIntent.putExtra(Intent.EXTRA_TEXT, "Hello, this me.")
-                                mContext.startActivity(shareIntent)
-                            }
-
-                        ) {
-                            Text(text = "Email")
-                        }
-                    }
                 }
 
-                //end of column 2
+
+            }
+            //Row 1
+            Spacer(modifier = Modifier.height(5.dp))
+            Row(modifier = Modifier.padding(start = 25.dp)) {
+                //column1
+                Column {
+                    Card(
+                        modifier = Modifier
+                            .height(200.dp)
+                            .width(180.dp)
+                    ) {
+                        Box(
+                            modifier = Modifier.fillMaxSize(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.chair),
+                                contentDescription = "New York",
+                                modifier = Modifier.fillMaxSize(),
+                                contentScale = ContentScale.Crop
+                            )
+
+                        }
+                    }
+                    Spacer(modifier = Modifier.height(5.dp))
+
+                    Column (modifier = Modifier.width(180.dp)){
+                        Text(
+                            text = "Amos Chair",
+                            fontSize = 20.sp,
+                            fontFamily = FontFamily.Serif,
+
+                            )
+                        Spacer(modifier = Modifier.height(5.dp))
+
+                        Text(
+                            text = "There are also escalators in .",
+                            fontSize = 15.sp,
+                            fontFamily = FontFamily.Serif,
+                        )
+                        Spacer(modifier = Modifier.height(10.dp))
+
+                        Row {
+                            Text(
+                                text = "Ksh 1500",
+                                fontSize = 15.sp,
+                                fontFamily = FontFamily.Serif,
+                                color = Color.Blue
+                            )
+
+                            Icon(imageVector = Icons.Default.ShoppingCart,
+                                contentDescription = "favorite", tint = Color.Black,
+                                modifier = Modifier
+
+                                    .padding(10.dp))
+                        }
+
+
+                    }
+
+                }
+
+                //end of column 1
+                Spacer(modifier = Modifier.width(20.dp))
+
+                Column {
+                    Card(
+                        modifier = Modifier
+                            .height(200.dp)
+                            .width(180.dp)
+                    ) {
+                        Box(
+                            modifier = Modifier.fillMaxSize(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.chair),
+                                contentDescription = "New York",
+                                modifier = Modifier.fillMaxSize(),
+                                contentScale = ContentScale.Crop
+                            )
+
+                        }
+                    }
+                    Spacer(modifier = Modifier.height(5.dp))
+
+                    Column (modifier = Modifier.width(180.dp)){
+                        Text(
+                            text = "Amos Chair",
+                            fontSize = 20.sp,
+                            fontFamily = FontFamily.Serif,
+
+                            )
+                        Spacer(modifier = Modifier.height(5.dp))
+
+                        Text(
+                            text = "There are also escalators in .",
+                            fontSize = 15.sp,
+                            fontFamily = FontFamily.Serif,
+                        )
+                        Spacer(modifier = Modifier.height(10.dp))
+
+                        Row {
+                            Text(
+                                text = "Ksh 1500",
+                                fontSize = 15.sp,
+                                fontFamily = FontFamily.Serif,
+                                color = Color.Blue
+                            )
+
+                            Icon(imageVector = Icons.Default.ShoppingCart,
+                                contentDescription = "favorite", tint = Color.Black,
+                                modifier = Modifier
+
+                                    .padding(10.dp))
+                        }
+
+
+                    }
+
+                }
+
+
+            }
+            //Row 1
+            Spacer(modifier = Modifier.height(5.dp))
+            Row(modifier = Modifier.padding(start = 25.dp)) {
+                //column1
+                Column {
+                    Card(
+                        modifier = Modifier
+                            .height(200.dp)
+                            .width(180.dp)
+                    ) {
+                        Box(
+                            modifier = Modifier.fillMaxSize(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.chair),
+                                contentDescription = "New York",
+                                modifier = Modifier.fillMaxSize(),
+                                contentScale = ContentScale.Crop
+                            )
+
+                        }
+                    }
+                    Spacer(modifier = Modifier.height(5.dp))
+
+                    Column (modifier = Modifier.width(180.dp)){
+                        Text(
+                            text = "Amos Chair",
+                            fontSize = 20.sp,
+                            fontFamily = FontFamily.Serif,
+
+                            )
+                        Spacer(modifier = Modifier.height(5.dp))
+
+                        Text(
+                            text = "There are also escalators in .",
+                            fontSize = 15.sp,
+                            fontFamily = FontFamily.Serif,
+                        )
+                        Spacer(modifier = Modifier.height(10.dp))
+
+                        Row {
+                            Text(
+                                text = "Ksh 1500",
+                                fontSize = 15.sp,
+                                fontFamily = FontFamily.Serif,
+                                color = Color.Blue
+                            )
+
+                            Icon(imageVector = Icons.Default.ShoppingCart,
+                                contentDescription = "favorite", tint = Color.Black,
+                                modifier = Modifier
+
+                                    .padding(10.dp))
+                        }
+
+
+                    }
+
+                }
+
+                //end of column 1
+                Spacer(modifier = Modifier.width(20.dp))
+
+                Column {
+                    Card(
+                        modifier = Modifier
+                            .height(200.dp)
+                            .width(180.dp)
+                    ) {
+                        Box(
+                            modifier = Modifier.fillMaxSize(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.chair),
+                                contentDescription = "New York",
+                                modifier = Modifier.fillMaxSize(),
+                                contentScale = ContentScale.Crop
+                            )
+
+                        }
+                    }
+                    Spacer(modifier = Modifier.height(5.dp))
+
+                    Column (modifier = Modifier.width(180.dp)){
+                        Text(
+                            text = "Amos Chair",
+                            fontSize = 20.sp,
+                            fontFamily = FontFamily.Serif,
+
+                            )
+                        Spacer(modifier = Modifier.height(5.dp))
+
+                        Text(
+                            text = "There are also escalators in .",
+                            fontSize = 15.sp,
+                            fontFamily = FontFamily.Serif,
+                        )
+                        Spacer(modifier = Modifier.height(10.dp))
+
+                        Row {
+                            Text(
+                                text = "Ksh 1500",
+                                fontSize = 15.sp,
+                                fontFamily = FontFamily.Serif,
+                                color = Color.Blue
+                            )
+
+                            Icon(imageVector = Icons.Default.ShoppingCart,
+                                contentDescription = "favorite", tint = Color.Black,
+                                modifier = Modifier
+
+                                    .padding(10.dp))
+                        }
+
+
+                    }
+
+                }
+
+
+            }
+            //Row 1
+            Spacer(modifier = Modifier.height(5.dp))
+            Row(modifier = Modifier.padding(start = 25.dp)) {
+                //column1
+                Column {
+                    Card(
+                        modifier = Modifier
+                            .height(200.dp)
+                            .width(180.dp)
+                    ) {
+                        Box(
+                            modifier = Modifier.fillMaxSize(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.chair),
+                                contentDescription = "New York",
+                                modifier = Modifier.fillMaxSize(),
+                                contentScale = ContentScale.Crop
+                            )
+
+                        }
+                    }
+                    Spacer(modifier = Modifier.height(5.dp))
+
+                    Column (modifier = Modifier.width(180.dp)){
+                        Text(
+                            text = "Amos Chair",
+                            fontSize = 20.sp,
+                            fontFamily = FontFamily.Serif,
+
+                            )
+                        Spacer(modifier = Modifier.height(5.dp))
+
+                        Text(
+                            text = "There are also escalators in .",
+                            fontSize = 15.sp,
+                            fontFamily = FontFamily.Serif,
+                        )
+                        Spacer(modifier = Modifier.height(10.dp))
+
+                        Row {
+                            Text(
+                                text = "Ksh 1500",
+                                fontSize = 15.sp,
+                                fontFamily = FontFamily.Serif,
+                                color = Color.Blue
+                            )
+
+                            Icon(imageVector = Icons.Default.ShoppingCart,
+                                contentDescription = "favorite", tint = Color.Black,
+                                modifier = Modifier
+
+                                    .padding(10.dp))
+                        }
+
+
+                    }
+
+                }
+
+                //end of column 1
+                Spacer(modifier = Modifier.width(20.dp))
+
+                Column {
+                    Card(
+                        modifier = Modifier
+                            .height(200.dp)
+                            .width(180.dp)
+                    ) {
+                        Box(
+                            modifier = Modifier.fillMaxSize(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Image(
+                                painter = painterResource(id = R.drawable.chair),
+                                contentDescription = "New York",
+                                modifier = Modifier.fillMaxSize(),
+                                contentScale = ContentScale.Crop
+                            )
+
+                        }
+                    }
+                    Spacer(modifier = Modifier.height(5.dp))
+
+                    Column (modifier = Modifier.width(180.dp)){
+                        Text(
+                            text = "Amos Chair",
+                            fontSize = 20.sp,
+                            fontFamily = FontFamily.Serif,
+
+                            )
+                        Spacer(modifier = Modifier.height(5.dp))
+
+                        Text(
+                            text = "There are also escalators in .",
+                            fontSize = 15.sp,
+                            fontFamily = FontFamily.Serif,
+                        )
+                        Spacer(modifier = Modifier.height(10.dp))
+
+                        Row {
+                            Text(
+                                text = "Ksh 1500",
+                                fontSize = 15.sp,
+                                fontFamily = FontFamily.Serif,
+                                color = Color.Blue
+                            )
+
+                            Icon(imageVector = Icons.Default.ShoppingCart,
+                                contentDescription = "favorite", tint = Color.Black,
+                                modifier = Modifier
+
+                                    .padding(10.dp))
+                        }
+
+
+                    }
+
+                }
 
 
             }
@@ -301,7 +624,13 @@ fun chair(){
     }
             //end row1
 
+
 }
+
+
+
+
+
 
 @Preview(showBackground = true)
 @Composable
